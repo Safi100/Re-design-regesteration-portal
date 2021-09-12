@@ -24,21 +24,21 @@ body{
     position: sticky;
     width: 100%;
     top: 0;
+    z-index: 2;
  }
  .information{
      width: 100%;
      border:1px solid black;
      display: flex;
+     justify-content: space-evenly;
      flex-wrap: wrap;
      padding: 20px 10px;
      margin: 20px 0;
      margin-bottom: 9px;
      }
-     .col{
-         margin-right: 40px;
-     }
-     .col:first-child{
-         margin-right: 10px;
+     .information  span{
+        color: rgb(153, 0, 0);
+        font-weight: bold;
      }
      @media (max-width:900px) {
          .col{
@@ -97,7 +97,6 @@ body{
       }
       .reg{
           border:1px solid #c7c7c7;
-          height: 80px;
       }
       .reg > p{
           color:white;
@@ -111,7 +110,7 @@ body{
           justify-content: center;
       }
       .status p{
-        margin-bottom: 30px ;
+        margin-bottom: 28px;
         color: red;
         font-size: 14px;
         font-family:  Tahoma;
@@ -145,7 +144,7 @@ body{
       tfoot{
           background: #ffffcc;
       }
-      /* Ipad design */
+      /* Ipad design (responsive courses table) */
       @media (max-width:900px){
           .col{
             margin-right: 0 !important;
@@ -154,13 +153,63 @@ body{
           .table{
               flex-direction: column;
           }
+          .table-2{margin-right: 0;}
+          .table-2 .status{text-align: center;}
           .irshad{
               width: 100%;
           }
+          .table-2 table thead{display: none;}
+          .table-2 table, .table-2 table tbody, .table-2 table tr,.table-2 table td,.table-2 tfoot{
+              display: block;
+              width: 100%;
+          }
+          .table-2 table tr{margin-bottom: 15px;}
+          .table-2 table td{
+              text-align: left;
+              position: relative;
+          }
+          .table-2 table td::before{
+            content:attr(data-label);
+            position: absolute;
+            right: 0;
+            width: 50%;
+            padding-right: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: right;
+        }
       }
       /* phone design */
       @media (max-width:768px){
+        .status p{
+            margin-bottom: 20px;
+        }
         .col{
             flex-basis: 100%;
         }
       }
+      /* first table responsive in very small screens */
+      @media(max-width:357px){
+          .table-1{min-width: 100%;}
+        .table-1 table thead{display: none;}
+        .table-1 table, .table-1 table tbody, .table-1 table tr,.table-1 table td,.table-1 tfoot{
+            display: block;
+            width: 100%;
+        }
+        .table-1 table tr{margin-bottom: 15px;}
+        .table-1 table td{
+            text-align: left !important;
+            position: relative;
+        }
+        .table-1 table td::before{
+          content:attr(data-label);
+          position: absolute;
+          right: 0;
+          width: 50%;
+          padding-right: 15px;
+          font-size: 15px;
+          font-weight: bold;
+          text-align: right;
+      }
+    }
+      
