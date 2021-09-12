@@ -190,7 +190,8 @@ body{
       }
       /* first table responsive in very small screens */
       @media(max-width:357px){
-          .table-1{min-width: 100%;}
+        .select select{margin: 0;}
+        .table-1{min-width: 100%;}
         .table-1 table thead{display: none;}
         .table-1 table, .table-1 table tbody, .table-1 table tr,.table-1 table td,.table-1 tfoot{
             display: block;
